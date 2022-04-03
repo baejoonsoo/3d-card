@@ -2,7 +2,7 @@ const frame = document.getElementById("frame");
 const card = document.getElementById("card");
 const light = document.getElementById("light");
 
-const { x, y, width, height } = frame.getBoundingClientRect();
+let { x, y, width, height } = frame.getBoundingClientRect();
 
 frame.addEventListener("mouseenter", () => {
   frame.addEventListener("mousemove", (e) => {
@@ -36,4 +36,12 @@ frame.addEventListener("mouseleave", () => {
   light.style.backgroundImage = "";
   card.style.boxShadow = "";
   card.style.transform = "";
+});
+
+window.addEventListener("resize", () => {
+  const rect = frame.getBoundingClientRect();
+  x = rect.x;
+  y = rect.y;
+  width = rect.width;
+  height = rect.height;
 });
