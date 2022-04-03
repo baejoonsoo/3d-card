@@ -33,4 +33,7 @@ frame.addEventListener("mouseenter", () => {
 
 frame.addEventListener("mouseleave", () => {
   frame.removeEventListener("mousemove", () => {});
+  light.style.backgroundImage = "";
+  card.style.boxShadow = "";
+  card.style.transform = "";
 });
